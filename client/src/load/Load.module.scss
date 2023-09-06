@@ -1,0 +1,26 @@
+.load {
+  position: absolute;
+
+  > div:first-child {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.line {
+  margin-top: 5px;
+  height: 3px;
+  background-color: #dead00;
+  animation-name: line;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes line {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}

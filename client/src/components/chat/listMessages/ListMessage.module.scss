@@ -1,0 +1,28 @@
+.listMessage {
+  padding: 20px;
+
+  height: inherit;
+  overflow-y: auto;
+}
+
+.imageChat {
+  text-align: center;
+  > img {
+    width: 300px;
+  }
+}
+
+.author {
+  color: black;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.data {
+  text-align: right;
+  font-style: italic;
+}
+
+.massage {
+  margin-bottom: 10px;
+}

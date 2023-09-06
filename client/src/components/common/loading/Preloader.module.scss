@@ -1,0 +1,16 @@
+.line {
+  height: 5px;
+  background-color: #dead00;
+  animation-name: line;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes line {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}

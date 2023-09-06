@@ -1,0 +1,21 @@
+.app {
+  min-height: 100vh;
+
+  box-sizing: border-box;
+}
+
+.up {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .app {
+  }
+}

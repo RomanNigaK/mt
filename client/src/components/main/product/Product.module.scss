@@ -1,0 +1,19 @@
+.product {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 130px;
+  animation-name: productLine;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes productLine {
+  from {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  to {
+    margin-left: 100px;
+    margin-top: 130px;
+  }
+}

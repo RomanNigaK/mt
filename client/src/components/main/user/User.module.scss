@@ -1,0 +1,19 @@
+.user {
+  position: absolute;
+  margin-left: -55px;
+  margin-top: 30px;
+  animation-name: userLine;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes userLine {
+  from {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  to {
+    margin-left: -55px;
+    margin-top: 30px;
+  }
+}

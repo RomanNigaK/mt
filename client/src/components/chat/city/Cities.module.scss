@@ -1,0 +1,18 @@
+.content {
+  margin-top: 50px;
+  padding-left: 50px;
+}
+
+.item {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-top: 1px solid #dead00;
+    border-bottom: 1px solid #dead00;
+  }
+}

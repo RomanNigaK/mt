@@ -1,0 +1,19 @@
+.article {
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: flex;
+  height: 40px;
+  border-bottom: 1px solid #9fa1a8;
+  margin-left: 20px;
+  margin-right: 20px;
+  > div.arrow {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  > div.title {
+    display: flex;
+    align-items: center;
+  }
+}

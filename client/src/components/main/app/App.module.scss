@@ -1,0 +1,20 @@
+.app {
+  position: absolute;
+  margin-left: -40px;
+  margin-top: -50px;
+  animation-name: appLine;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  cursor: pointer;
+}
+
+@keyframes appLine {
+  from {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  to {
+    margin-left: -40px;
+    margin-top: -50px;
+  }
+}

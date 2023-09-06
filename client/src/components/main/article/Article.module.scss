@@ -1,0 +1,19 @@
+.article {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 100px;
+  animation-name: articleLine;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes articleLine {
+  from {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  to {
+    margin-left: 10px;
+    margin-top: 100px;
+  }
+}

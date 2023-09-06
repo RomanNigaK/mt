@@ -1,0 +1,19 @@
+.city {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 16pt;
+  > div.marker {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nameCity {
+  color: #fff;
+}

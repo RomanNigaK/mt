@@ -1,0 +1,35 @@
+.headerPage {
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  > div:first-child {
+    padding: 10px;
+  }
+  > div:last-child {
+    display: flex;
+
+    justify-content: right;
+    padding-right: 10px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  padding: 5px;
+  > div:last-child {
+    padding-left: 10px;
+    color: #1f49c2;
+    font-size: 1em;
+  }
+  border-bottom: 1px solid #dead00;
+}
+.option {
+  width: 60px;
+  float: right;
+  margin-left: 10px;
+  cursor: pointer;
+}

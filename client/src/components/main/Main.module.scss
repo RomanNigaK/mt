@@ -1,0 +1,21 @@
+.load {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.load {
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    > div:last-child {
+      margin-left: -5px;
+    }
+  }
+}
+
+.line {
+  height: 3px;
+  background-color: #dead00;
+  margin-top: 5px;
+  width: 200px;
+}
