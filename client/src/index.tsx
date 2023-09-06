@@ -20,5 +20,5 @@ setTimeout(
         </BrowserRouter>
       </Provider>
     ),
-  3000
+  0
 );
