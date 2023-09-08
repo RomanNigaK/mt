@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import home from "@public/icons/logo.svg";
 interface IHeaderPage {
   icon: string;
-  title: string;
+  title: string | number;
 }
 
 export default function HeaderPage({ icon, title }: IHeaderPage) {

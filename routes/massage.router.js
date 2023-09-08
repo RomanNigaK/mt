@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const connection = require("../connection");
-const { dataTranslation, imgMessageFromDB } = require("../script");
+
+const { dataTranslation, imgMessageFromDB, loadData } = require("../script");
 const router = Router();
 
 router.post("/", async (req, res) => {
@@ -46,10 +46,10 @@ router.post("/", async (req, res) => {
 });
 module.exports = router;
 
-function loadData(sql) {
-  return new Promise((resolve, reject) => {
-    connection.invokeQuery(sql, (rows) => {
-      resolve(rows);
-    });
-  });
-}
+// function loadData(sql) {
+//   return new Promise((resolve, reject) => {
+//     connection.invokeQuery(sql, (rows) => {
+//       resolve(rows);
+//     });
+//   });
+// }

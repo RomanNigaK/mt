@@ -1,9 +1,11 @@
 import { useCallback, useState } from "react";
+import { setErrorApp } from "redux/slice/app.slice";
+import { useAppDispatch } from "./redux.hook";
 
 export default function useHttp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<boolean | string>(false);
-
+  const dispatch = useAppDispatch();
   const request = useCallback(
     async (url: string, method = "GET", body = null, headers = {}) => {
       setLoading(true);
@@ -19,6 +21,7 @@ export default function useHttp() {
       } catch (error: any) {
         setLoading(false);
         setError(error.message);
+        dispatch(setErrorApp(error.message));
         throw error;
       }
     },

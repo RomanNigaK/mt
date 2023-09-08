@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "webpack"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:8889",
   "dependencies": {
     "@hookform/resolvers": "^3.0.1",
     "html-react-parser": "^4.2.1",

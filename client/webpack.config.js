@@ -15,7 +15,7 @@ module.exports = {
     proxy: {
       "/api": {
         target: "http://localhost:7070",
-        router: () => "http://localhost:5000",
+        router: () => "http://localhost:8889",
         logLevel: "debug" /*optional*/,
       },
     },

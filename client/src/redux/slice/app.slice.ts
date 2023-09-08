@@ -13,12 +13,14 @@ interface IState {
   city: string;
   page: number;
   messages: Message[];
+  currentError: string;
 }
 
 const initialState: IState = {
   city: "Сочи",
   page: 0,
   messages: [],
+  currentError: "",
 };
 
 const appSlice = createSlice({
@@ -43,8 +45,11 @@ const appSlice = createSlice({
     setPage: (state, action) => {
       state.page = action.payload;
     },
+    setErrorApp: (state, action) => {
+      state.currentError = action.payload;
+    },
   },
 });
 
-export const { setCity, addMessage, setPage } = appSlice.actions;
+export const { setCity, addMessage, setPage, setErrorApp } = appSlice.actions;
 export default appSlice.reducer;

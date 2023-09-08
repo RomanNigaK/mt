@@ -1,0 +1,20 @@
+.input {
+  height: 40px;
+  border-radius: 15px;
+  border-bottom: 1px solid rgba(222, 173, 0, 0.57);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+  padding-right: 2px;
+  > input {
+    padding-left: 10px;
+
+    width: 100%;
+  }
+}
+.error {
+  color: red;
+  text-align: left;
+  font-size: 0.8em;
+}

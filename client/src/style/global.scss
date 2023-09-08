@@ -32,13 +32,19 @@ a {
 }
 input {
   border: none;
+  background: transparent;
+  font-size: 1em;
 }
 input:focus {
   outline: none;
+  background-color: transparent;
 }
 
 input::placeholder {
   font-size: 1em;
+}
+h3 {
+  margin-bottom: 20px;
 }
 
 // *,

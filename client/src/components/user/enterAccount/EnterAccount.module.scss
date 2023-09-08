@@ -1,0 +1,14 @@
+.enterAccount {
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  margin-bottom: 100px;
+  > div {
+    margin-bottom: 20px;
+  }
+}
+.btn {
+  display: flex;
+  justify-content: right;
+}

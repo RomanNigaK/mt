@@ -1,3 +1,5 @@
+const connection = require("../connection");
+
 function intMountToString_ru(mount) {
   switch (mount) {
     case 0:
@@ -43,4 +45,17 @@ function dataTranslation(milisecunds) {
   return data.getDate() + " " + month + " " + data.getFullYear();
 }
 
-module.exports = { intMountToString_ru, imgMessageFromDB, dataTranslation };
+function loadData(sql) {
+  return new Promise((resolve, reject) => {
+    connection.invokeQuery(sql, (rows) => {
+      resolve(rows);
+    });
+  });
+}
+
+module.exports = {
+  intMountToString_ru,
+  imgMessageFromDB,
+  dataTranslation,
+  loadData,
+};
