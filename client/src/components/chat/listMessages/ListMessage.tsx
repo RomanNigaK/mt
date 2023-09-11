@@ -5,14 +5,26 @@ import { selectorMessages } from "redux/selectors";
 
 interface IListMessage {
   updatePage: () => void;
+  showPhone?: boolean;
 }
 
-export default function ListMessage({ updatePage }: IListMessage) {
+export default function ListMessage({
+  updatePage,
+  showPhone = false,
+}: IListMessage) {
   const messages = useAppSelector((state) => selectorMessages(state));
 
   const loadNewPage = (scrollTop: number) => {
     if (scrollTop === 0) updatePage();
   };
+
+  const reg = /(?:\+|\d)[\d\-\(\) ]{9,}\d/g;
+
+  useEffect(() => {
+    console.log("loadlist message");
+    const elem = document.querySelector("[id=listMessages]") as HTMLDivElement;
+    console.log(elem.scrollHeight);
+  }, []);
 
   return (
     <div
@@ -33,7 +45,9 @@ export default function ListMessage({ updatePage }: IListMessage) {
               )}
             </div>
 
-            <div className={css.text}>{e.msg}</div>
+            <div className={css.text}>
+              {!showPhone ? e.msg.replace(reg, "+7(xxx)xxx-xx-xx") : e.msg}
+            </div>
             <div className={css.data}>{e.data}</div>
           </div>
         );

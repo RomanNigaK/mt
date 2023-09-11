@@ -3,10 +3,16 @@ import css from "./Chat.modules.scss";
 import HeaderPage from "components/headerPage/HeaderPage";
 import chatIco from "@public/icons/chat.svg";
 import geoMin from "./media/geoMin.svg";
+import attention from "@public/icons/attention.svg";
 import { useAppDispatch, useAppSelector } from "hooks/redux.hook";
-import { selectorCity, selectorMessages, selectorPage } from "redux/selectors";
+import {
+  selectorCity,
+  selectorMessages,
+  selectorPage,
+  selectorUser,
+} from "redux/selectors";
 import { NavLink } from "react-router-dom";
-
+import send from "@public/icons/send.svg";
 import useHttp from "hooks/http.hook";
 import { addMessage, setPage } from "redux/slice/app.slice";
 import ListMessage from "./listMessages/ListMessage";
@@ -18,6 +24,7 @@ export default function Chat() {
   const city = useAppSelector((state) => selectorCity(state));
   const page = useAppSelector((state) => selectorPage(state));
   const messages = useAppSelector((state) => selectorMessages(state));
+  const user = useAppSelector((state) => selectorUser(state));
   const dispatch = useAppDispatch();
 
   const { request, loading } = useHttp();
@@ -57,12 +64,29 @@ export default function Chat() {
           </NavLink>
         </div>
         {loading && <Preloader />}
-        <LayoutPage top={100}>
+        <LayoutPage top={100} marginBottom={100}>
           {(!loading || messages.length > 0) && (
-            <ListMessage updatePage={updatePage} />
+            <ListMessage updatePage={updatePage} showPhone={!!user} />
           )}
         </LayoutPage>
+        {!user && !loading && (
+          <div className={css.advertisement}>
+            <img src={attention} alt="" />
+            <div> Номера телефонов видны авторизованным пользователям</div>
+          </div>
+        )}
+
+        {user && <SendMessage />}
       </div>
+    </div>
+  );
+}
+
+function SendMessage() {
+  return (
+    <div className={css.sendMessage}>
+      <textarea name="" id="" placeholder="Сообщение"></textarea>
+      <img src={send} alt="" />
     </div>
   );
 }

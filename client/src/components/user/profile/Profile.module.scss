@@ -104,11 +104,12 @@
 }
 .nails {
   border-radius: 10px 10px 10px 10px;
-  border: 1px solid #1f49c2;
+
   width: 100px;
   display: flex;
   height: 40px;
   > div {
+    border: 1px solid #1f49c2;
     height: inherit;
     display: flex;
     align-items: center;
@@ -118,9 +119,25 @@
   > div:first-child {
     background: #1f49c2;
     width: 40px;
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 10px 0px 0px 10px;
   }
   > div:last-child {
     width: 60px;
+    border-radius: 0px 10px 10px 0px;
+  }
+}
+
+.optionProfile {
+  margin-top: 5px;
+  height: 50px;
+  background: #1f49c2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  > div {
+    margin: 5px;
+  }
+  > div:first-child {
+    border-bottom: 1px solid #fff;
   }
 }

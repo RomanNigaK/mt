@@ -14,6 +14,7 @@ interface IState {
   page: number;
   messages: Message[];
   currentError: string;
+  isModal: boolean;
 }
 
 const initialState: IState = {
@@ -21,6 +22,7 @@ const initialState: IState = {
   page: 0,
   messages: [],
   currentError: "",
+  isModal: false,
 };
 
 const appSlice = createSlice({
@@ -33,9 +35,6 @@ const appSlice = createSlice({
     },
     addMessage: (state, action) => {
       const { result, city, page } = action.payload;
-
-      console.log("page", page);
-
       if (!page) {
         state.messages = result.reverse();
       } else {
@@ -48,8 +47,12 @@ const appSlice = createSlice({
     setErrorApp: (state, action) => {
       state.currentError = action.payload;
     },
+    setModal: (state, action) => {
+      state.isModal = action.payload;
+    },
   },
 });
 
-export const { setCity, addMessage, setPage, setErrorApp } = appSlice.actions;
+export const { setCity, addMessage, setPage, setErrorApp, setModal } =
+  appSlice.actions;
 export default appSlice.reducer;

@@ -12,6 +12,7 @@ import MessageError from "components/common/messageError/MessageError";
 import { useAppDispatch, useAppSelector } from "hooks/redux.hook";
 import { selectorError } from "redux/selectors";
 import { setUser } from "redux/slice/user.slice";
+import useModal from "hooks/modal.hook";
 type FormEnterAccount = {
   email: string;
   password: string;
@@ -60,6 +61,8 @@ export default function EnterAccount() {
     auth(data);
   };
 
+  const { modalShow } = useModal();
+
   return (
     <form onSubmit={handleSubmit(handleSubmitForm)}>
       <div className={css.enterAccount}>
@@ -76,6 +79,7 @@ export default function EnterAccount() {
           error={errors.password?.message}
         />
         <div className={css.btn}>
+          <div onClick={modalShow}>Восстановить пароль</div>
           <Btn icon={enter} idSubmit="enterFormAccount" loading={loading} />
         </div>
         <Submit id="enterFormAccount" />

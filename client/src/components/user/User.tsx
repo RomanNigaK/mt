@@ -11,13 +11,18 @@ import Btn from "components/common/btn/Btn";
 import enter from "@public/icons/enter.svg";
 import EnterAccount from "./enterAccount/EnterAccount";
 import { useAppSelector } from "hooks/redux.hook";
-import { selectorUser } from "redux/selectors";
+import { selectorIsModal, selectorUser } from "redux/selectors";
 import { User } from "redux/slice/user.slice";
 import Profile from "./profile/Profile";
+import Modal from "components/common/modal/Modal";
+import useModal from "hooks/modal.hook";
+import ResetPassword from "components/common/modal/resetPassword/ResetPassword";
 export default function User() {
   const user = useAppSelector((state) => selectorUser(state));
 
   const title = user?.id ? "ID: " + user.id : "Вход";
+
+  const modal = useAppSelector((state) => selectorIsModal(state));
 
   return (
     <div className={css.user}>
@@ -43,6 +48,12 @@ export default function User() {
           )}
         </div>
       </LayoutPage>
+
+      {modal && (
+        <Modal>
+          <ResetPassword />
+        </Modal>
+      )}
     </div>
   );
 }

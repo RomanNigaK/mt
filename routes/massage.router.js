@@ -44,12 +44,25 @@ router.post("/", async (req, res) => {
 
   res.send({ result, city, page });
 });
-module.exports = router;
 
-// function loadData(sql) {
-//   return new Promise((resolve, reject) => {
-//     connection.invokeQuery(sql, (rows) => {
-//       resolve(rows);
-//     });
-//   });
-// }
+router.get("/list", async (req, res) => {
+  let sql = `Select * from message
+                      where topic='Сочи'
+                      ORDER BY id DESC limit 0, 10`;
+
+  const messages = await loadData(sql);
+  res.send(messages);
+});
+//ALTER TABLE user ADD author VARCHAR;
+
+// UPDATE customers
+//    SET first_name = 'Joseph'
+//  WHERE customer_id = 8000;
+router.get("/delete", async (req, res) => {
+  let sql = `UPDATE user SET password='tomat101' where id = 8 `;
+
+  const messages = await loadData(sql);
+  res.send(messages);
+});
+
+module.exports = router;

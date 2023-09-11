@@ -6,10 +6,10 @@ const router = Router();
 router.post("/auth", async (req, res) => {
   let { email, password } = req.body;
 
-  email = "ajratajratov3@gmail.com";
-  password = 16919;
+  // email = "sashus101@gmail.com";
+  // password = 8;
 
-  let sql = `SELECT * FROM user where id=${password} and email='${email}'`;
+  let sql = `SELECT * FROM user where password='${password}' and email='${email}'`;
 
   const users = await loadData(sql);
 
@@ -26,7 +26,7 @@ router.get("/list", async (req, res) => {
   let { email, id } = req.body;
 
   email = "novakangelinka@gmail.com";
-  id = 16919;
+  id = 8;
 
   let sql = `SELECT * FROM user where id=${id} `;
 

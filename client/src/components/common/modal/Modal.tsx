@@ -4,9 +4,10 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import css from "./LayoutScreen.module.scss";
-
-export default function LayoutScreen({ children }: PropsWithChildren) {
+import css from "./Modal.module.scss";
+import close from "@public/icons/close.svg";
+import useModal from "hooks/modal.hook";
+export default function Modal({ children }: PropsWithChildren) {
   const [clientWidth, setClientWidth] = useState(
     document.documentElement.clientWidth
   );
@@ -32,7 +33,14 @@ export default function LayoutScreen({ children }: PropsWithChildren) {
     height: clientHeight,
   };
 
-  console.log(clientWidth);
+  const { modalHide } = useModal();
 
-  return <div style={style}>{children}</div>;
+  return (
+    <div style={style} className={css.modal}>
+      <div className={css.header}>
+        <img src={close} alt="" onClick={modalHide} />
+      </div>
+      <div className={css.content}>{children}</div>
+    </div>
+  );
 }

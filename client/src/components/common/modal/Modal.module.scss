@@ -1,0 +1,15 @@
+.modal {
+  background: rgba($color: #e2e2e2, $alpha: 0.95);
+}
+
+.header {
+  padding: 15px;
+  text-align: right;
+  height: 65px;
+}
+.content {
+  height: calc(100% - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

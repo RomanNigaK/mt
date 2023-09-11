@@ -10,9 +10,14 @@ import { selectorMessages } from "redux/selectors";
 
 interface ILayoutPage extends PropsWithChildren {
   top?: number;
+  marginBottom?: number;
 }
 
-export default function LayoutPage({ children, top = 50 }: ILayoutPage) {
+export default function LayoutPage({
+  children,
+  top = 50,
+  marginBottom = 10,
+}: ILayoutPage) {
   const m = useAppSelector((state) => selectorMessages(state));
 
   const [clientHeight, setClientHeight] = useState(
@@ -41,7 +46,7 @@ export default function LayoutPage({ children, top = 50 }: ILayoutPage) {
   }, [m]);
 
   const style: CSSProperties = {
-    height: clientHeight - top - 10,
+    height: clientHeight - top - marginBottom,
   };
 
   return (
